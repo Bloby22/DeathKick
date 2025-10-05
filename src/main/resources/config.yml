@@ -1,0 +1,162 @@
+# ================================
+# InsaneKick Configuration
+# Verze: 1.0.0
+# Autor: Bloby
+# ================================
+
+# Povolit plugin (true = zapnuto, false = vypnuto)
+enabled: true
+
+# Debug mód - zobrazuje detailní informace v konzoli
+debug-mode: false
+
+# ================================
+# KICK NASTAVENÍ
+# ================================
+
+# Zpráva při vyhození hráče
+# Podporuje barevné kódy pomocí &
+# Použij \n pro nový řádek
+kick-message: |
+  &c&l⚠ INSANE KICK ⚠
+  &7
+  &fOmlouvám se, ale bohužel jsi &c&lumřel&f,
+  &ftak tě to automaticky vyhodilo ze serveru.
+  &7
+  &ePřipoj se prosím znovu a hraj dál!
+  &7
+  &8(Tento systém chrání stabilitu serveru)
+
+# Čas v sekundách před vyhodnutím (0 = okamžitě)
+# Doporučeno: 0-5 sekund
+kick-delay: 3
+
+# ================================
+# VIZUÁLNÍ EFEKTY
+# ================================
+
+# Zobrazit title při smrti s odpočtem
+show-death-title: true
+
+# Nastavení title zprávy
+death-title:
+  title: "&c&lUMŘEL JSI!"
+  subtitle: "&7Vyhodím tě za &e{time}&7 sekund..."
+
+# Přehrát zvuk při odpočítávání
+play-countdown-sound: true
+
+# Typ zvuku (BLOCK_NOTE_BLOCK_PLING, ENTITY_EXPERIENCE_ORB_PICKUP, atd.)
+countdown-sound: "BLOCK_NOTE_BLOCK_PLING"
+
+# Hlasitost zvuku (0.0 - 1.0)
+sound-volume: 1.0
+
+# Výška tónu zvuku (0.5 - 2.0)
+sound-pitch: 0.5
+
+# ================================
+# NOTIFIKACE
+# ================================
+
+# Poslat notifikaci adminům při kicku hráče
+notify-admins: true
+
+# Formát notifikace pro adminy (vyžaduje permission: insanekick.notify)
+admin-notification: "&c&lInsaneKick &8| &7Hráč &f{player} &7byl vyhozen po smrti"
+
+# Logovat všechny kicky do konzole
+log-kicks-to-console: true
+
+# Detailní log zahrnující lokaci a příčinu smrti
+detailed-death-log: true
+
+# ================================
+# STATISTIKY
+# ================================
+
+# Ukládat statistiky úmrtí hráčů
+track-death-statistics: true
+
+# Automaticky resetovat statistiky při restartu serveru
+reset-stats-on-restart: false
+
+# ================================
+# VÝKON & OPTIMALIZACE
+# ================================
+
+# Priorita event listeneru (LOWEST, LOW, NORMAL, HIGH, HIGHEST, MONITOR)
+listener-priority: "HIGHEST"
+
+# Asynchronní zpracování kicků (experimentální)
+async-kick-processing: false
+
+# ================================
+# POKROČILÁ NASTAVENÍ
+# ================================
+
+# Whitelist světů - plugin funguje pouze v těchto světech (prázdné = všechny světy)
+# Příklad: ["world", "world_nether", "world_the_end"]
+world-whitelist: []
+
+# Blacklist světů - plugin nefunguje v těchto světech
+# Příklad: ["spawn", "lobby"]
+world-blacklist: []
+
+# Minimální čas mezi smrtmi v sekundách (anti-spam)
+# 0 = vypnuto
+death-cooldown: 0
+
+# Kicknout pouze při PvP smrti
+only-pvp-deaths: false
+
+# Kicknout pouze při PvE smrti (mobové)
+only-pve-deaths: false
+
+# Kicknout pouze při pádu z výšky
+only-fall-deaths: false
+
+# ================================
+# VÝJIMKY
+# ================================
+
+# Hráči s těmito permissions nebudou vyhozeni
+# Příklad: "insanekick.bypass"
+bypass-permission: "insanekick.bypass"
+
+# VIP hráči nebudou vyhozeni (vyžaduje Vault)
+bypass-for-vip: false
+
+# Skupiny, které mají bypass (vyžaduje Vault)
+# Příklad: ["vip", "admin", "owner"]
+bypass-groups: []
+
+# ================================
+# MESSAGES
+# ================================
+
+messages:
+  no-permission: "&c&lInsaneKick &8| &cNemáš oprávnění použít tento příkaz!"
+  config-reloaded: "&c&lInsaneKick &8| &aKonfigurace byla úspěšně načtena!"
+  plugin-enabled: "&c&lInsaneKick &8| &aPlugin byl zapnut!"
+  plugin-disabled: "&c&lInsaneKick &8| &cPlugin byl vypnut!"
+  debug-enabled: "&c&lInsaneKick &8| &eDebug mód byl zapnut!"
+  debug-disabled: "&c&lInsaneKick &8| &cDebug mód byl vypnut!"
+  unknown-command: "&c&lInsaneKick &8| &cNeznámý příkaz! Použij: &f/insanekick help"
+
+# ================================
+# POKROČILÉ - NEUPRAVUJTE BEZ ZNALOSTÍ
+# ================================
+
+advanced:
+  # Verze konfigurace (neměnit!)
+  config-version: 1
+  
+  # Použít legacy color codes místo hex
+  use-legacy-colors: true
+  
+  # Maximum záznamů ve statistikách
+  max-statistics-entries: 1000
+  
+  # Automatické čištění starých záznamů (dny)
+  auto-cleanup-days: 30
