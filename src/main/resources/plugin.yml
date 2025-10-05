@@ -1,0 +1,100 @@
+name: InsaneKick
+version: 1.0.0
+main: org.bloby.insanekick.InsaneKick
+api-version: 1.20
+author: Bloby
+authors: [Bloby]
+description: Pokročilý plugin který vyhodí hráče po smrti se stylovými efekty a statistikami
+website: https://github.com/bloby/insanekick
+prefix: InsaneKick
+load: POSTWORLD
+depend: []
+softdepend: [Vault, PlaceholderAPI]
+
+commands:
+  insanekick:
+    description: Hlavní příkaz InsaneKick pluginu
+    usage: |
+      /<command> - Zobrazí nápovědu
+      /<command> reload - Znovu načte konfiguraci
+      /<command> info - Zobrazí informace o pluginu
+      /<command> toggle - Zapne/vypne plugin
+      /<command> debug - Zapne/vypne debug mód
+      /<command> stats - Zobrazí statistiky
+      /<command> stats <hráč> - Zobrazí statistiky hráče
+      /<command> reset <hráč> - Resetuje statistiky hráče
+      /<command> clearstats - Vymaže všechny statistiky
+    aliases: [ik, ikick, insane]
+    permission: insanekick.use
+    permission-message: "§c§lInsaneKick §8| §cNemáš oprávnění použít tento příkaz!"
+
+permissions:
+  insanekick.*:
+    description: Přístup ke všem funkcím InsaneKick
+    default: op
+    children:
+      insanekick.admin: true
+      insanekick.use: true
+      insanekick.notify: true
+      insanekick.bypass: true
+      insanekick.stats: true
+      insanekick.stats.others: true
+      insanekick.reset: true
+  
+  insanekick.admin:
+    description: Administrátorská oprávnění pro plnou kontrolu pluginu
+    default: op
+    children:
+      insanekick.reload: true
+      insanekick.toggle: true
+      insanekick.debug: true
+      insanekick.info: true
+      insanekick.stats: true
+      insanekick.stats.others: true
+      insanekick.reset: true
+      insanekick.clearstats: true
+      insanekick.notify: true
+  
+  insanekick.use:
+    description: Základní použití příkazu /insanekick
+    default: true
+  
+  insanekick.reload:
+    description: Oprávnění k reloadování konfigurace
+    default: op
+  
+  insanekick.toggle:
+    description: Oprávnění k zapnutí/vypnutí pluginu
+    default: op
+  
+  insanekick.debug:
+    description: Oprávnění k zapnutí/vypnutí debug módu
+    default: op
+  
+  insanekick.info:
+    description: Oprávnění k zobrazení informací o pluginu
+    default: op
+  
+  insanekick.stats:
+    description: Oprávnění k zobrazení vlastních statistik
+    default: true
+  
+  insanekick.stats.others:
+    description: Oprávnění k zobrazení statistik jiných hráčů
+    default: op
+  
+  insanekick.reset:
+    description: Oprávnění k resetování statistik hráčů
+    default: op
+  
+  insanekick.clearstats:
+    description: Oprávnění k vymazání všech statistik
+    default: op
+  
+  insanekick.notify:
+    description: Dostávat notifikace o kicknutých hráčích
+    default: op
+  
+  insanekick.bypass:
+    description: Nebýt vyhozen po smrti (bypass)
+    default: false
